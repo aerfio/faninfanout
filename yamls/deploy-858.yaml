@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-858
+  name: nginx-858
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-858
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-858
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

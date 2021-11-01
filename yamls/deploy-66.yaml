@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-66
+  name: nginx-66
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-66
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-66
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

@@ -13,7 +13,7 @@ import (
 )
 
 var fileNumber = 2000
-var workerNum = 500
+var workerNum = 50
 
 // https://gobyexample.com/worker-pools
 func main() {
@@ -23,9 +23,7 @@ func main() {
 	errs := make(chan error, fileNumber)
 	jobs := make(chan string, fileNumber)
 	_, executableFile, _, _ := runtime.Caller(0)
-	//fmt.Println(filename)
-
-
+	//fmt.Println(executableFile)
 
 	// start workers
 	for i := 1; i <= workerNum; i++ {
@@ -69,7 +67,7 @@ func process(fileName string) (string, error) {
 		return "", fmt.Errorf("while casting yaml to json for file %s: %s", fileName, err)
 	}
 
-	time.Sleep(3 * time.Second) // oh no, very expensive task
+	time.Sleep(250 * time.Millisecond) // oh no, very expensive task
 	logrus.Infof("finish processing %s", fileName)
 	return gjson.GetBytes(jsonBytes, "metadata.name").String(), nil
 }

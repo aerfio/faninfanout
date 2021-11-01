@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-172
+  name: nginx-172
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-172
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-172
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}

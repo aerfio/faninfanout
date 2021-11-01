@@ -20,7 +20,7 @@ func main() {
 
 	bodies := make(chan string, fileNumber)
 	_, executableFile, _, _ := runtime.Caller(0)
-	//fmt.Println(filename)
+	//fmt.Println(executableFile)
 	eg := errgroup.Group{}
 
 	for i := 1; i <= fileNumber; i++ {
